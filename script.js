@@ -25,9 +25,8 @@ async function getPhoto(photo) {
 //Show items in DOM
 async function showPosts() {
   const posts = await getPosts();
-  const pic = await getPhoto();
-
-  posts.forEach((post) => {
+  posts.forEach(async (post) => {
+    const pic = await getPhoto();
     const postEl = document.createElement("div");
     postEl.classList.add("post");
     postEl.innerHTML = `
